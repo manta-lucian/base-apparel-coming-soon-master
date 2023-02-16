@@ -1,0 +1,199 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html,
+body {
+  height: 100%;
+}
+html {
+  font-size: 62.5%;
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+.visually-hidden:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+:root {
+  --color-Desaturated-Red: hsl(0, 36%, 70%);
+  --color-Soft-Red: hsl(0, 93%, 68%);
+  --color-Dark-Grayish-Red: hsl(0, 6%, 24%);
+  --fontsize-default: 1.6rem;
+}
+main {
+  min-height: 100vh;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: var(--fontsize-default);
+  background: linear-gradient(135deg, #fffdfe, #fff3f3);
+  overflow: hidden;
+}
+
+.header {
+  width: 100%;
+  max-width: 59rem;
+  margin: 0 auto;
+  /* height: 100vh; */
+  display: grid;
+}
+.hero {
+  /* height: auto; */
+  width: 100%;
+  /* object-fit: contain; */
+}
+.logo {
+  padding: 3.5rem;
+  width: 20rem;
+}
+
+.content {
+  padding: 3.5rem;
+  text-align: center;
+}
+.content__title {
+  font-size: 5rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 10px;
+  line-height: 1;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+span {
+  font-weight: 200;
+  color: var(--color-Desaturated-Red);
+  font-size: 4.5rem;
+}
+.content__text {
+  color: var(--color-Desaturated-Red);
+}
+.email {
+  padding: 3.5rem;
+  position: relative;
+}
+.email-box {
+  display: block;
+  width: 100%;
+  border: 1px solid rgb(0 0 0 / 0.2);
+  font-size: 2rem;
+  padding: 1rem 1rem 1rem 2rem;
+  border-radius: 100rem;
+  color: rgb(0 0 0 / 0.5);
+  font-weight: bold;
+  background-color: transparent;
+  outline: none;
+}
+.email-box:focus {
+  outline: 1px solid var(--color-Soft-Red);
+}
+#submit {
+  position: absolute;
+  right: 3.5rem;
+  top: 3.5rem;
+  width: 7rem;
+  height: 5rem;
+  border: 0;
+  border-radius: 500rem;
+  font-size: 4rem;
+  background-image: url("../images/icon-arrow.svg"), linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+
+@media (min-width: 800px) {
+  .header {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 20rem 1fr 1fr;
+    max-width: 100%;
+    height: 100vh;
+  }
+  .hero {
+    height: 100%;
+    object-fit: cover;
+  }
+  .logo {
+    grid-column: 1/2;
+  }
+  .content {
+    grid-column: 1/2;
+  }
+  .email {
+    grid-column: 1/2;
+  }
+  picture {
+    grid-row: 1/-1;
+    grid-column: 2/-1;
+    object-fit: cover;
+  }
+}
+
+@media (min-width: 1000px) {
+  html {
+    font-size: 80%;
+  }
+}
+@media (min-width: 1400px) {
+  html {
+    font-size: 90%;
+  }
+}
